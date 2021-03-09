@@ -13,13 +13,23 @@ class UserService {
         return sql.rows("SELECT * from employee")
     }
 
-    def deleteEmployee(def id){
+    def getEmployee(Integer id){
+        def sql = new Sql(dataSource)
+        sql.rows("SELECT * from employee where employee_id=${id}")
+    }
+
+    def deleteEmployee(Integer id){
         def sql = new Sql(dataSource)
         sql.executeUpdate("DELETE from employee where employee_id=${id}")
     }
 
-    def createEmployee(def first_name,last_name,afm,date_of_birth){
+    def createEmployee(def first_name,def last_name,def afm,def date_of_birth){
         def sql = new Sql(dataSource)
-        sql.executeInsert("INSERT INTO employee(first_name,last_name,afm,date_of_birth) VALUES (${first_name},${last_name},${afm},${date_of_birth})")
+        sql.executeInsert("INSERT INTO employee(first_name,last_name,afm,date_of_birth) VALUES (${first_name},${last_name},${afm},'${date_of_birth}')")
+    }
+
+    def updateEmployee(def id, def first_name,def last_name,def afm,def date_of_birth){
+        def sql = new Sql(dataSource)
+        sql.executeInsert("UPDATE employee SET first_name=${first_name},last_name=${last_name},afm=${afm},date_of_birth='${date_of_birth}'WHERE employee_id=${id})")
     }
 }
