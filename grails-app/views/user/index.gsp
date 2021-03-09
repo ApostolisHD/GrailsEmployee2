@@ -9,7 +9,6 @@
     <asset:stylesheet src="sidebar.css"/>
 </head>
 <body>
-
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <a href="user/index" class="navbar-brand">Employee</a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
@@ -18,7 +17,7 @@
 </nav>
 
 <div class="d-flex" id="wrapper">
-    <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="sidebar bg-light border-right" id="sidebar-wrapper">
         <div class="list-group list-group-flush">
             <a href="#" class="list-group-item list-group-item-action bg-light">Search Employee</a>
             <g:link controller="user" action="create" class="btn btn-secondary">Add Employee</g:link>
@@ -26,6 +25,7 @@
         </div>
     </div>
 </div>
+
 <div id="page-content-wrapper">
     <div class="page-content">
         <div class="container">
@@ -34,6 +34,7 @@
             <table class="table table-condensed table-hover table-striped table-bordered col-sm-12">
                 <thead class="thead-dark" >
                     <tr>
+                        <th>Departure</th>
                         <th>First Name</th>
                         <th>last Name</th>
                         <th>AFM</th>
@@ -44,6 +45,7 @@
                         <tbody>
                             <g:each in="${employees}">
                                 <tr>
+                                    <td>${it.name}</td>
                                     <td>${it.first_name}</td>
                                     <td>${it.last_name}</td>
                                     <td>${it.afm}</td>

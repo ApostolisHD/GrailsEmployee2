@@ -10,13 +10,12 @@ class UserService {
 
     def getAllEmployees() {
         def sql = new Sql(dataSource)
-        return sql.rows("SELECT * from employee")
-        sql.close()
+        return sql.rows("SELECT * from departure,employee where departure.departure_id=employee.id_dep")
     }
 
     def getEmployee(def id){
         def sql = new Sql(dataSource)
-        sql.rows("SELECT * from employee where employee_id=${id}")
+        sql.rows("SELECT * from employee,departure where employee_id=${id}")
     }
 
     def deleteEmployee(Integer id){

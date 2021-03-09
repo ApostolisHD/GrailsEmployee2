@@ -9,6 +9,7 @@ class UserController {
 
         def index() {
             def employees = userService.getAllEmployees()
+            println "${employees}"
             [employees:employees]
             }
             def delete(Integer id){
@@ -27,9 +28,8 @@ class UserController {
             }
 
             def edit(Integer id){
-                def employee = userService.getEmployee(id)
-                println"${employee}"
-                [employee_id:employee.employee_id,first_name:employee.first_name,last_name:employee.last_name,afm:employee.afm]
+                def response = userService.getEmployee(id)
+                [employee_id:response.employee_id[0],first_name:response.first_name[0],last_name:response.last_name[0],afm:response.afm[0],name:response.name[0]]
             }
 
             def update(Integer id){

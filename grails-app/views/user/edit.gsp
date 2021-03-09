@@ -9,7 +9,7 @@
   <div class="card-header">
   </div>
   <div class="card-body">
-    <g:form controller="user" action="update" >
+    <g:form controller="user" action="update" id="${employee_id}" >
       <div class="form-group">
         <label>First Name</label>
         <g:textField name="first_name" class="form-control" value="${first_name}"/>
@@ -22,6 +22,19 @@
       <div class="form-group">
         <label>AFM</label>
         <g:textField name="afm" class="form-control" value="${afm}" placeholder="Please Enter afm"/>
+      </div>
+      <div class="form-group">
+        <label>Departure</label>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
       </div>
       <div class="form-action-panel">
         <button type="submit" class="btn btn-primary"> Submit </button>
