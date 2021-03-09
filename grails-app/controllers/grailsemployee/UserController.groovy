@@ -17,6 +17,7 @@ class UserController {
             }
 
             def create(){
+
             }
 
             def save(){
