@@ -27,11 +27,13 @@ class UserController {
 
             def edit(Integer id){
                 def employee = userService.getEmployee(id)
-                [first_name:params.first_name,last_name:params.last_name,afm:params.afm,date_of_birth:params.date_of_birth]
+                println"${employee}"
+                [employee_id:employee.employee_id,first_name:employee.first_name,last_name:employee.last_name,afm:employee.afm]
             }
 
-            def update(){
-                userService.updateEmployee(params.first_name,params.last_name,params.afm,params.date_of_birth)
+            def update(Integer id){
+                println"${id}"
+                userService.updateEmployee(id,params.first_name,params.last_name,params.afm)
                 redirect(action:"index")
             }
 
