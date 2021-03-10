@@ -1,9 +1,5 @@
 package grailsemployee
 
-import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
-
 class UserController {
     UserService userService
     DepartureService departureService
@@ -32,8 +28,7 @@ class UserController {
 
             def edit(Integer id){
                 def response = userService.getEmployee(id)
-                def response_departure = departureService.getAllDeparture()
-                [employee_id:response.employee_id,first_name:response.first_name,last_name:response.last_name,afm:response.afm,name:response_departure.name]
+                [employee_id:response.employee_id,first_name:response.first_name,last_name:response.last_name,afm:response.afm,name:response.name]
             }
 
             def update(Integer id){
