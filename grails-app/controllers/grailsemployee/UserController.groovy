@@ -2,7 +2,7 @@ package grailsemployee
 
 class UserController {
     UserService userService
-    DepartureService departureService
+    DepartmentService departmentService
 
     def index() {
         def employees = userService.getAllEmployees()
@@ -15,21 +15,20 @@ class UserController {
     }
 
     def create() {
-        def departure = departureService.getAllDeparture()
-        [departure: departure]
+        def departments = departmentService.getAllDepartments()
+        [departments: departments]
     }
 
     def save(Integer id_dep) {
         String date_of_birth = params.date_of_birth.replace("-", "/")
         userService.createEmployee(params.first_name, params.last_name, params.afm, date_of_birth, id_dep)
-        println "${params}"
         redirect(action: "index")
     }
 
     def edit(Integer id) {
         def response = userService.getEmployee(id)
-        def departure = departureService.getAllDeparture()
-        [employee_id: response.employee_id, first_name: response.first_name, last_name: response.last_name, afm: response.afm,departure:departure]
+        def departments = departmentService.getAllDepartments()
+        [employee_id: response.employee_id, first_name: response.first_name, last_name: response.last_name, afm: response.afm,departments:departments]
     }
 
     def update(Integer id) {

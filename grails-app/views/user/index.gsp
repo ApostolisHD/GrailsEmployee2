@@ -36,10 +36,10 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Create Employee
                         </g:link>
-                        <div class="sb-sidenav-menu-heading">Departure Management</div>
+                        <div class="sb-sidenav-menu-heading">Departments Management</div>
                         <g:link controller="departments" action="create" class="nav-link">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Create Departure
+                            Create Department
                         </g:link>
                         <div class="sb-sidenav-menu-heading">Settings</div>
                         <g:link controller="authentication" action="logout" class="nav-link">
@@ -72,7 +72,7 @@
                                     <thead>
                                     <tr>
                                     <tr>
-                                        <th>Departure</th>
+                                        <th>Department</th>
                                         <th>First Name</th>
                                         <th>last Name</th>
                                         <th>AFM</th>

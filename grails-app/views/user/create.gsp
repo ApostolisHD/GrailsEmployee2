@@ -52,7 +52,7 @@
             </div>
 
             <div class="form-group">
-                <g:select name="id_dep" from="${departure}" optionValue="name" optionKey="departure_id" />
+                <g:select name="id_dep" from="${departments}" optionValue="name" optionKey="department_id" />
             </div>
 
             <div class="form-group mt-2">

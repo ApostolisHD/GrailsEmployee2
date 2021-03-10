@@ -11,7 +11,7 @@ class UserService {
 
     def getAllEmployees() {
         def sql = new Sql(dataSource)
-        return sql.rows("SELECT * from departure,employee where departure.departure_id=employee.id_dep")
+        return sql.rows("SELECT * from departments,employee where departments.department_id=employee.id_dep")
     }
 
     def getEmployee(def id) {

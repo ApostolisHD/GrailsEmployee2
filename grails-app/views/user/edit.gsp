@@ -36,15 +36,16 @@
             <input maxlength="9" name="afm" class="form-control" placeholder="Please Enter afm" value="${afm}"/>
         </div>
 
-        <div class="form-action-panel">
+        <div class="form-group mt-4">
+            <g:select name="id_dep" from="${departments}" optionValue="name" optionKey="department_id"></g:select>
+        </div>
+
+        <div class="form-action-panel mt-2">
             <button type="submit" class="btn btn-primary">Submit</button>
             <g:link controller="user" action="index">
-                <button type="button" class="btn btn-primary">Cancel</button>
+                <button type="button" class="btn btn-primary ml-2">Cancel</button>
             </g:link>
         </div>
-    </div>
-    <div class="form-group">
-        <g:select name="id_dep" from="${departure}" optionValue="name" optionKey="departure_id"></g:select>
     </div>
 </g:form>
 </div>

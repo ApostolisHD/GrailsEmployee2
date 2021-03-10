@@ -3,7 +3,7 @@ package grailsemployee
 import grails.testing.services.ServiceUnitTest
 import spock.lang.Specification
 
-class DepartureServiceSpec extends Specification implements ServiceUnitTest<DepartureService>{
+class DepartmentServiceSpec extends Specification implements ServiceUnitTest<DepartmentService>{
 
     def setup() {
     }

@@ -1,14 +1,14 @@
 package grailsemployee
 
 class DepartmentsController {
-    DepartureService departureService
+    DepartmentService departmentService
 
     def create() {
 
     }
 
     def save(){
-        departureService.createDeparture(params.name)
+        departmentService.createDepartment(params.name)
         println  "params ${params}"
         redirect(controller:"user", action:"index")
     }
