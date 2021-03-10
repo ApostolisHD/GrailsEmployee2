@@ -5,7 +5,7 @@ class SecurityInterceptor {
     AuthenticationService authenticationService
 
     SecurityInterceptor() {
-        matchAll().excludes(controller: "authentication")
+        matchAll().excludes(controller: "authentication").excludes(controller: "signupUser")
     }
 
     boolean before() {

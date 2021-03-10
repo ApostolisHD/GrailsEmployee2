@@ -1,39 +1,64 @@
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>EmployeeManagment</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous">
-<div class="card">
-    <div class="card-header">
-    </div>
-    <div class="card-body">
+<%@ page contentType="text/html;charset=UTF-8" %>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Create Employee</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <asset:stylesheet src="bootstrap.min.css"/>
+    <asset:stylesheet src="styles.css"/>
+</head>
+
+<body>
+    <div class="signup-form">
         <g:form controller="user" action="save">
+            <h2>Create Employee</h2>
+
             <div class="form-group">
-                <label>First Name</label>
-                <g:textField name="first_name" class="form-control" placeholder="Please Enter First Name"/>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <g:textField name="first_name" class="form-control" placeholder="Please Enter First Name"
+                                 required="required"/>
+                </div>
             </div>
 
             <div class="form-group">
-                <label>Last Name</label>
-                <g:textField name="last_name" class="form-control" placeholder="Please Enter Last Name"/>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+                    <g:textField name="last_name" class="form-control" placeholder="Please Enter Last Name"
+                                 required="required"/>
+                </div>
             </div>
+
             <div class="form-group">
-                <label>AFM</label>
-                <g:textField name="afm" class="form-control" placeholder="Please Enter afm"/>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    <input maxlength="9" name="afm" class="form-control" placeholder="Please Enter afm"
+                           required="required"/>
+                </div>
             </div>
+
             <div class="form-group">
-                <label>Date Of Birth</label>
-                <g:field type="date" name="date_of_birth" class="form-control"/>
+                <div class="input-group"><span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    <g:field type="date" name="date_of_birth" class="form-control"/>
+                </div>
             </div>
+
             <div class="form-group">
-                <label>Departure</label>
-                <g:textField name="name" class="form-control" placeholder="Please Enter A Departure"/>
+                <g:select name="id_dep" from="${departure}" optionValue="name" optionKey="departure_id" />
             </div>
-            <div class="form-action-panel">
-                <button type="submit" class="btn btn-primary"> Submit </button>
-                <g:link controller="user" action="index" class="btn btn-primary">cancel</g:link>
+
+            <div class="form-group mt-2">
+                <button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
             </div>
         </g:form>
+
     </div>
-</div>
+</body>
