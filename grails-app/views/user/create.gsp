@@ -8,23 +8,27 @@
     <div class="card-header">
     </div>
     <div class="card-body">
-        <g:form controller="user" action="save" method="post">
+        <g:form controller="user" action="save">
             <div class="form-group">
                 <label>First Name</label>
-                <g:textField name="first_name" class="form-control" value="${first_name}" placeholder="Please Enter First Name"/>
+                <g:textField name="first_name" class="form-control" placeholder="Please Enter First Name"/>
             </div>
 
             <div class="form-group">
                 <label>Last Name</label>
-                <g:textField name="last_name" class="form-control" value="${last_name}" placeholder="Please Enter Last Name"/>
+                <g:textField name="last_name" class="form-control" placeholder="Please Enter Last Name"/>
             </div>
             <div class="form-group">
                 <label>AFM</label>
-                <g:textField name="afm" class="form-control" value="${afm}" placeholder="Please Enter afm"/>
+                <g:textField name="afm" class="form-control" placeholder="Please Enter afm"/>
             </div>
             <div class="form-group">
                 <label>Date Of Birth</label>
-                <g:field type="date" name="date_of_birth"  values="${date_of_birth}" class="form-control"/>
+                <g:field type="date" name="date_of_birth" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label>Departure</label>
+                <g:textField name="name" class="form-control" placeholder="Please Enter A Departure"/>
             </div>
             <div class="form-action-panel">
                 <button type="submit" class="btn btn-primary"> Submit </button>

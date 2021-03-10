@@ -15,7 +15,7 @@ class UserService {
 
     def getEmployee(def id){
         def sql = new Sql(dataSource)
-        sql.rows("SELECT * from employee,departure where employee_id=${id}")
+        sql.firstRow("SELECT * from employee,departure where employee_id=${id}")
     }
 
     def deleteEmployee(Integer id){
@@ -27,6 +27,7 @@ class UserService {
         def sql = new Sql(dataSource)
         sql.executeInsert("INSERT INTO employee(first_name,last_name,afm,date_of_birth) VALUES (${first_name},${last_name},${afm},'${date_of_birth}')")
     }
+
 
     def updateEmployee(def id, def first_name,def last_name,def afm){
         def sql = new Sql(dataSource)
