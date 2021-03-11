@@ -19,7 +19,11 @@
                 </div>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-lg">Create Department</button>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    <g:link controller="employees" action="index">
+                        <button type="button" class="btn btn-primary ml-2">Cancel</button>
+                    </g:link>
+                </div>
             </div>
         </g:form>
     </div>

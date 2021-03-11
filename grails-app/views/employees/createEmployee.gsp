@@ -60,8 +60,11 @@
                 <g:select class="form-control border mb-4" name="id_dep" from="${departments}" optionValue="name" optionKey="department_id" />
             </div>
 
-            <div class="form-group mt-2">
-                <button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
+            <div class="form-action-panel mt-2">
+                <button type="submit" class="btn btn-primary ml-2">Create</button>
+                <g:link controller="employees" action="index">
+                    <button type="button" class="btn btn-primary ml-4">Cancel</button>
+                </g:link>
             </div>
         </g:form>
     </div>

@@ -41,7 +41,7 @@
         </div>
 
         <div class="form-action-panel mt-2">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Save</button>
             <g:link controller="employees" action="index">
                 <button type="button" class="btn btn-primary ml-2">Cancel</button>
             </g:link>
