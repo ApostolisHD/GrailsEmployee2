@@ -9,12 +9,11 @@
 <body>
 <div class="signup-form">
 <g:form controller="departments" action="updateDepartment" id="${department_id}" method="post">
-    <h2>Create Employee</h2>
+    <h2>Edit Department</h2>
     <div class="form-group">
         <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-            <g:textField name="name" class="form-control"
-                         value="${name}"/>
+            <input maxlength="10" name="name" class="form-control" value="${name}" required="required"/>
         </div>
     </div>
         <div class="form-action-panel mt-2">

@@ -16,6 +16,7 @@ class AuthenticationController {
             session.setAttribute("user_name",user.user_name)
             redirect(controller: "employees", action: "index")
         } else {
+            flash.message = 'Wrong Credentials'
             redirect(controller: "authentication", action: "Login")
         }
     }

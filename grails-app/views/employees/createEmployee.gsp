@@ -22,6 +22,7 @@
             <h2>Create Employee</h2>
 
             <div class="form-group">
+                <h6 class="mb-0 ml-1 text-sm">First Name</h6>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
                     <g:textField name="first_name" class="form-control" placeholder="Please Enter First Name"
@@ -30,6 +31,7 @@
             </div>
 
             <div class="form-group">
+                <h6 class="mb-0 ml-1 text-sm">Last Name</h6>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
                     <g:textField name="last_name" class="form-control" placeholder="Please Enter Last Name"
@@ -38,27 +40,29 @@
             </div>
 
             <div class="form-group">
+                <h6 class="mb-0 ml-1 text-sm">AFM</h6>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                    <input maxlength="9" name="afm" class="form-control" placeholder="Please Enter afm"
+                    <input type="text" maxlength="9" name="afm" class="form-control" placeholder="Please Enter afm"
                            required="required"/>
                 </div>
             </div>
 
             <div class="form-group">
+                <h6 class="mb-0 ml-1 text-sm">Date Of Birth</h6>
                 <div class="input-group"><span class="input-group-addon"><i class="fa fa-lock"></i></span>
                     <g:field type="date" name="date_of_birth" class="form-control"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <g:select name="id_dep" from="${departments}" optionValue="name" optionKey="department_id" />
+                <h6 class="mb-4 ml-1 text-sm">Department</h6>
+                <g:select class="form-control border mb-4" name="id_dep" from="${departments}" optionValue="name" optionKey="department_id" />
             </div>
 
             <div class="form-group mt-2">
                 <button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
             </div>
         </g:form>
-
     </div>
 </body>

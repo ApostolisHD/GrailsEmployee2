@@ -14,15 +14,13 @@
             <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <g:textField name="name" class="form-control" placeholder="Please Enter A Department"
-                                 required="required"/>
+                    <input maxlength="10" name="name" class="form-control" placeholder="Please Enter Department"
+                           required="required"/>
                 </div>
             </div>
-
             <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-lg">Create Department</button>
             </div>
         </g:form>
-
     </div>
 </body>

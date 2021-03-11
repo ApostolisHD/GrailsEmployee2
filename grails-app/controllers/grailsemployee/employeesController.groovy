@@ -4,11 +4,12 @@ class employeesController {
     EmployeeService employeeService
     DepartmentService departmentService
 
+
     def index() {
         def employees = employeeService.getAllEmployees()
         def username = session.getAttribute("user_name")
         def departments = departmentService.getAllDepartments()
-        [employees: employees , user_name:username,departments: departments]
+        [employees: employees , user_name:username, departments: departments]
     }
 
     def createEmployee() {

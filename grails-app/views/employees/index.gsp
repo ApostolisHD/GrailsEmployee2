@@ -3,15 +3,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Employee Management</title>
     <asset:stylesheet src="bootstrap.min.css"/>
     <asset:stylesheet src="styles.css"/>
 </head>
 
+
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <a class="navbar-brand" href="index">Employee - Department Management</a>
-
 
 %{--        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">--}%
 %{--            <div class="input-group">--}%
@@ -107,9 +109,14 @@
 
             <div>
                 <main>
+                    <g:if test="${flash.message}">
+                        <div class="alert alert-primary alert-dismissible" role="alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <g:message message="${flash.message}"></g:message>
+                        </div>
+                    </g:if>
                     <div class="container-fluid">
                         <h1 class="mt-4">Departments</h1>
-
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table mr-1"></i>
@@ -159,5 +166,7 @@
                     </div>
                 </div>
             </footer>
+            </div>
         </div>
     </div>
+</body>

@@ -23,8 +23,15 @@ class DepartmentsController {
     }
 
     def deleteDepartment(Integer id) {
-        departmentService.deleteDepartment(id)
-        redirect(controller: "employees" , action: "index")
+        def response = departmentService.deleteDepartment(id)
+
+        if(response){
+            redirect(controller: "employees" , action: "index")
+        }
+        else {
+            flash.message = 'You cant delete a department with employees. You must delete the employees first'
+            redirect(controller: "employees", action: "index")
+        }
     }
 
 }
