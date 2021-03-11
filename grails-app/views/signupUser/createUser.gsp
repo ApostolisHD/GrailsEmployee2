@@ -31,7 +31,10 @@
                 <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
             </div>
         </g:form>
-        <div class="hint-text">Already have an account?<g:link controller="authentication" action="Login"
-                                                               class="btn btn-secondary">Login Here</g:link></div>
+        <div class="hint-text">Already have an account?
+            <g:link controller="authentication" action="Login">
+            <button type="button" class="btn btn-primary ml-2">Login</button>
+        </g:link>
+        </div>
     </div>
 </body>
