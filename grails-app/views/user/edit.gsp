@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="signup-form">
-<g:form controller="user" action="update" id="${employee_id}">
+<g:form controller="user" action="update" id="${employee_id}" method="post">
     <h2>Create Employee</h2>
 
     <div class="form-group">
