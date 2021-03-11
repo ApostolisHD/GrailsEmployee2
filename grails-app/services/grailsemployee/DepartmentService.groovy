@@ -10,13 +10,13 @@ class DepartmentService {
 
     def getAllDepartments() {
         def sql = new Sql(dataSource)
-        return sql.rows(    """SELECT * 
+        return sql.rows("""SELECT * 
                                 FROM departments""")
     }
 
     def createDepartment(def name) {
         def sql = new Sql(dataSource)
-        sql.executeInsert(  """INSERT INTO departments (name) 
+        sql.executeInsert("""INSERT INTO departments (name) 
                                     VALUES (${name})""")
     }
 }
