@@ -9,7 +9,7 @@ class DepartmentsController {
 
     def saveDepartment(){
         departmentService.createDepartment(params.name)
-        redirect(controller:"user", action:"index")
+        redirect(controller:"employees", action:"index")
     }
 
     def editDepartment(Integer id) {
@@ -19,12 +19,12 @@ class DepartmentsController {
 
     def updateDepartment(Integer id) {
         departmentService.updateDepartment(id, params.name)
-        redirect(controller: "user",action: "index")
+        redirect(controller: "employees",action: "index")
     }
 
     def deleteDepartment(Integer id) {
         departmentService.deleteDepartment(id)
-        redirect(controller: "user" , action: "index")
+        redirect(controller: "employees" , action: "index")
     }
 
 }

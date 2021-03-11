@@ -11,7 +11,7 @@ class DepartmentService {
     def getAllDepartments() {
         def sql = new Sql(dataSource)
         return sql.rows("""SELECT * 
-                                FROM departments""")
+                                FROM departments ORDER BY department_id ASC""")
     }
 
     def createDepartment(def name) {

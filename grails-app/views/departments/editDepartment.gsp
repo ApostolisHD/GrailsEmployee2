@@ -18,10 +18,10 @@
         </div>
     </div>
         <div class="form-action-panel mt-2">
-            <g:link controller="user" action="index">
+            <g:link controller="employees" action="index">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </g:link>
-            <g:link controller="user" action="index">
+            <g:link controller="employees" action="index">
                 <button type="button" class="btn btn-primary ml-2">Cancel</button>
             </g:link>
         </div>

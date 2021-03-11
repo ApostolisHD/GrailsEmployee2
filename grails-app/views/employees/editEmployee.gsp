@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="signup-form">
-<g:form controller="user" action="updateEmployee" id="${employee_id}" method="post">
+<g:form controller="employees" action="updateEmployee" id="${employee_id}" method="post">
     <h2>Create Employee</h2>
 
     <div class="form-group">
@@ -42,7 +42,7 @@
 
         <div class="form-action-panel mt-2">
             <button type="submit" class="btn btn-primary">Submit</button>
-            <g:link controller="user" action="index">
+            <g:link controller="employees" action="index">
                 <button type="button" class="btn btn-primary ml-2">Cancel</button>
             </g:link>
         </div>

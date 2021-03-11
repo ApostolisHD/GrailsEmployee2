@@ -18,7 +18,7 @@
 
 <body>
     <div class="signup-form">
-        <g:form controller="user" action="save">
+        <g:form controller="employees" action="save">
             <h2>Create Employee</h2>
 
             <div class="form-group">
