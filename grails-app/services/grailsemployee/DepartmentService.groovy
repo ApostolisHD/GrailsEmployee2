@@ -19,4 +19,21 @@ class DepartmentService {
         sql.executeInsert("""INSERT INTO departments (name) 
                                     VALUES (${name})""")
     }
+    def getDepartmentById(Integer id) {
+        def sql = new Sql(dataSource)
+        sql.firstRow("""SELECT * 
+                                    FROM departments 
+                                    WHERE department_id = ${id}""")
+    }
+    def updateDepartment(def id, def name) {
+        def sql = new Sql(dataSource)
+        sql.executeUpdate("""UPDATE departments 
+                                    SET name=${name} 
+                                    WHERE department_id=${id}""")
+    }
+    def deleteDepartment(Integer id) {
+        def sql = new Sql(dataSource)
+        sql.executeUpdate("""DELETE FROM departments 
+                                    WHERE department_id=${id}""")
+    }
 }

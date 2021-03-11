@@ -3,14 +3,28 @@ package grailsemployee
 class DepartmentsController {
     DepartmentService departmentService
 
-    def create() {
+    def createDepartment() {
 
     }
 
-    def save(){
+    def saveDepartment(){
         departmentService.createDepartment(params.name)
-        println  "params ${params}"
         redirect(controller:"user", action:"index")
+    }
+
+    def editDepartment(Integer id) {
+        def response = departmentService.getDepartmentById(id)
+        [department_id:response.department_id, name:response.name]
+    }
+
+    def updateDepartment(Integer id) {
+        departmentService.updateDepartment(id, params.name)
+        redirect(controller: "user",action: "index")
+    }
+
+    def deleteDepartment(Integer id) {
+        departmentService.deleteDepartment(id)
+        redirect(controller: "user" , action: "index")
     }
 
 }

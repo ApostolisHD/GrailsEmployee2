@@ -9,7 +9,7 @@
 
 <body>
     <div class="signup-form">
-        <g:form controller="departments" action="save">
+        <g:form controller="departments" action="saveDepartment">
             <h2>Create Department</h2>
             <div class="form-group">
                 <div class="input-group">

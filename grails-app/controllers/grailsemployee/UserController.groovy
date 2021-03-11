@@ -3,18 +3,16 @@ package grailsemployee
 class UserController {
     UserService userService
     DepartmentService departmentService
+    AuthenticationService authenticationService
 
     def index() {
         def employees = userService.getAllEmployees()
-        [employees: employees]
+        def username = session.getAttribute("user_name")
+        def departments = departmentService.getAllDepartments()
+        [employees: employees , user_name:username,departments: departments]
     }
 
-    def delete(Integer id) {
-        userService.deleteEmployee(id)
-        redirect(action: "index")
-    }
-
-    def create() {
+    def createEmployee() {
         def departments = departmentService.getAllDepartments()
         [departments: departments]
     }
@@ -25,16 +23,20 @@ class UserController {
         redirect(action: "index")
     }
 
-    def edit(Integer id) {
+    def editEmployee(Integer id) {
         def response = userService.getEmployee(id)
         def departments = departmentService.getAllDepartments()
         [employee_id: response.employee_id, first_name: response.first_name, last_name: response.last_name, afm: response.afm,departments:departments]
     }
 
-    def update(Integer id) {
+    def updateEmployee(Integer id) {
         userService.updateEmployee(id, params.first_name, params.last_name, params.afm,params.id_dep)
         redirect(action: "index")
     }
 
+    def deleteEmployee(Integer id) {
+        userService.deleteEmployee(id)
+        redirect(action: "index")
+    }
 
 }

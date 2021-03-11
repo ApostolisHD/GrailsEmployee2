@@ -48,10 +48,10 @@
                         </g:link>
                     </div>
                 </div>
-                %{--                <div class="sb-sidenav-footer">--}%
-                %{--                    <div class="small">Logged in as:</div>--}%
-                %{--                    Start Bootstrap--}%
-                %{--                </div>--}%
+                                <div class="sb-sidenav-footer">
+                                    <div class="small">Logged in as:</div>
+                                    ${user_name}
+                                </div>
             </nav>
         </div>
 
@@ -90,9 +90,9 @@
                                             <td>${it.afm}</td>
                                             <td>${it.date_of_birth}</td>
                                             <td>
-                                                <g:link controller="user" action="edit" class="btn btn-secondary"
+                                                <g:link controller="user" action="editEmployee" class="btn btn-secondary"
                                                         id="${it.employee_id}">Edit</g:link>
-                                                <g:link controller="user" action="delete" class="btn btn-secondary"
+                                                <g:link controller="user" action="deleteEmployee" class="btn btn-secondary"
                                                         id="${it.employee_id}">Delete</g:link>
                                             </td>
                                         </tr>
@@ -104,6 +104,48 @@
                     </div>
                 </div>
             </main>
+
+            <div>
+                <main>
+                    <div class="container-fluid">
+                        <h1 class="mt-4">Departments</h1>
+
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table mr-1"></i>
+                                DataTable Departments
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" width="100%" cellspacing="0">
+                                        <thead>
+                                        <tr>
+                                        <tr>
+                                            <th>Department</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <g:each in="${departments}">
+                                            <tr>
+                                                <td>${it.name}</td>
+                                                <td>
+                                                    <g:link controller="departments" action="editDepartment" class="btn btn-secondary"
+                                                            id="${it.department_id}">Edit</g:link>
+                                                    <g:link controller="departments" action="deleteDepartment" class="btn btn-secondary"
+                                                            id="${it.department_id}">Delete</g:link>
+                                                </td>
+                                            </tr>
+                                        </g:each>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid">
                     <div class="d-flex align-items-center justify-content-between small">
