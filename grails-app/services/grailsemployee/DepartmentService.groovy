@@ -36,11 +36,12 @@ class DepartmentService {
         try {
             sql.executeUpdate("""DELETE FROM departments 
                                     WHERE department_id=${id}""")
-        }
-        catch (Exception e){
-            println(e.getMessage())
-            return false
-        }
+            }
+            catch (Exception e){
+                println(e.getMessage())
+                return false
+            }
         return true
+        sql.close()
     }
 }

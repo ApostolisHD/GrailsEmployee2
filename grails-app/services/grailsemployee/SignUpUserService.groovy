@@ -12,5 +12,6 @@ class SignUpUserService {
         def sql = new Sql(dataSource)
         sql.executeInsert("""INSERT INTO users (user_name,user_password,user_active) 
                                     VALUES (${user_name},${user_password},${false})""")
+        sql.close()
     }
 }
