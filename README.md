@@ -10,6 +10,9 @@
 ## Index 
 <img src="/images/index.JPG">
 
+## Index With Button
+<img src="/images/indexWithButton.JPG">
+
 ## Create Employee Screen 
 <img src="/images/createEmp.JPG">
 
