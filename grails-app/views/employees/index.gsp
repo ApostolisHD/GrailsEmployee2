@@ -3,8 +3,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <title>Employee Management</title>
     <asset:stylesheet src="bootstrap.min.css"/>
     <asset:stylesheet src="styles.css"/>
@@ -14,19 +16,23 @@
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <a class="navbar-brand" href="index">Employee - Department Management</a>
+        <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-5 my-2 my-md-0">
+            <div class="collapse navbar-collapse" id="navbar-list-4">
+                <div class ="sb-nav-link-icon"> <i class="bi bi-person" style="font-size: 2rem; color: cornflowerblue"></i></div>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           ${user_name}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <g:link controller="authentication" action="logout" class="dropdown-item">Log Out</g:link>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-%{--        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">--}%
-%{--            <div class="input-group">--}%
-%{--                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search"--}%
-%{--                       aria-describedby="basic-addon2"/>--}%
-
-%{--                <div class="input-group-append">--}%
-%{--                    <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>--}%
-%{--                </div>--}%
-%{--            </div>--}%
-%{--        </form>--}%
     </nav>
-
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -43,13 +49,10 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Create Department
                         </g:link>
-                        <div class="sb-sidenav-menu-heading">Settings</div>
-                        <g:link controller="authentication" action="logout" class="nav-link">
+                        <div class="sb-sidenav-menu-heading"></div>
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Logout
-                        </g:link>
-                    </div>
-                </div>
+                        </div>
+                         </div>
             <div class="sb-sidenav-footer">
                 <div class="small">Logged in as:</div>
                 ${user_name}
