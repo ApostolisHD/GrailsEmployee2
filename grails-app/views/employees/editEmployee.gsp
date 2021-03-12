@@ -12,7 +12,7 @@
 <body>
 <div class="signup-form">
 <g:form controller="employees" action="updateEmployee" id="${employee_id}" method="post">
-    <h2>Create Employee</h2>
+    <h2>Edit Employee</h2>
 
     <div class="form-group">
         <div class="input-group">
