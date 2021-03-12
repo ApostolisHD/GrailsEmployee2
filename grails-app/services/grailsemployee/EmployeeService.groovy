@@ -17,12 +17,11 @@ class EmployeeService {
         sql.close()
     }
 
-    def getEmployee(def id) {
+    def getEmployee(Integer id) {
         def sql = new Sql(dataSource)
         sql.firstRow("""SELECT * 
                                FROM employee 
                                WHERE employee_id=${id}""")
-        sql.close()
     }
 
     def deleteEmployee(Integer id) {
@@ -39,7 +38,7 @@ class EmployeeService {
         sql.close()
     }
 
-    def updateEmployee(def id, def first_name, def last_name, def afm, def id_dep) {
+    def updateEmployee(Integer id, def first_name, def last_name, def afm, def id_dep) {
         def sql = new Sql(dataSource)
         sql.executeUpdate("""UPDATE employee 
                                     SET first_name=${first_name},last_name=${last_name},afm=${afm},id_dep='${id_dep}' 

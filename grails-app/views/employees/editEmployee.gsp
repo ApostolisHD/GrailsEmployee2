@@ -37,7 +37,7 @@
         </div>
 
         <div class="form-group mt-4">
-            <g:select name="id_dep" from="${departments}" optionValue="name" optionKey="department_id"></g:select>
+            <g:select class="form-control border mb-4" name="id_dep" from="${departments}" optionValue="name" optionKey="department_id"></g:select>
         </div>
 
         <div class="form-action-panel mt-2">

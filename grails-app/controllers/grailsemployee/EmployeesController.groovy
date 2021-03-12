@@ -1,6 +1,6 @@
 package grailsemployee
 
-class employeesController {
+class EmployeesController {
     EmployeeService employeeService
     DepartmentService departmentService
 
@@ -17,7 +17,7 @@ class employeesController {
         [departments: departments]
     }
 
-    def save(Integer id_dep) {
+    def save(Integer id_department) {
         String date_of_birth = params.date_of_birth.replace("-", "/")
         employeeService.createEmployee(params.first_name, params.last_name, params.afm, date_of_birth, id_dep)
         redirect(action: "index")
@@ -26,7 +26,7 @@ class employeesController {
     def editEmployee(Integer id) {
         def response = employeeService.getEmployee(id)
         def departments = departmentService.getAllDepartments()
-        [employee_id: response.employee_id, first_name: response.first_name, last_name: response.last_name, afm: response.afm,departments:departments]
+        [employee_id:id, first_name: response.first_name, last_name: response.last_name, afm:response.afm,departments:departments]
     }
 
     def updateEmployee(Integer id) {
