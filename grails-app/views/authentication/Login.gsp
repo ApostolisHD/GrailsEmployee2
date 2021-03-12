@@ -13,7 +13,7 @@
             <g:message message="${flash.message}"></g:message>
         </div>
     </g:if>
-    <g:form controller="authentication" action="doLogin">
+    <g:form controller="authentication" action="doLogin" id="${user_id}">
         <div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
             <div class="card card0 border-0">
                 <div class="row d-flex">

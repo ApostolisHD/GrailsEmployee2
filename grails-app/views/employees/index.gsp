@@ -22,7 +22,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           ${user_name}
+                           ${session.user.user_name}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <g:link controller="authentication" action="logout" class="dropdown-item">Log Out</g:link>
@@ -55,7 +55,7 @@
                          </div>
             <div class="sb-sidenav-footer">
                 <div class="small">Logged in as:</div>
-                ${user_name}
+                ${session.user.user_name}
             </div>
         </nav>
     </div>

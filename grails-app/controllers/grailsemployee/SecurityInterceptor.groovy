@@ -9,7 +9,7 @@ class SecurityInterceptor {
     }
 
     boolean before() {
-        if (!session.getAttribute("user_id")) {
+        if (!request.session) {
             redirect(controller: "authentication", action: "Login")
             return false
         }

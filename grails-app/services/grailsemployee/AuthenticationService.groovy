@@ -25,7 +25,7 @@ class AuthenticationService {
         def sql = new Sql(dataSource)
         return sql.firstRow("""SELECT *
                                       FROM users 
-                                      WHERE user_name=${user_name} AND user_password=${user_password} AND user_active = true""")
+                                      WHERE user_name=${user_name} AND user_password=${user_password} AND user_active = ${true}""")
         sql.close()
     }
 
