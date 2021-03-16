@@ -12,38 +12,46 @@
 <body>
 <div class="signup-form">
 <g:form controller="employees" action="updateEmployee" id="${employee_id}" method="post">
-    <h2>Edit Employee</h2>
-
+    <h2>Επεξεργασία Εργαζομένου</h2>
     <div class="form-group">
+        <h6 class="mb-0 ml-1 text-sm">ΟΝΟΜΑ</h6>
         <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-            <g:textField name="first_name" class="form-control" placeholder="Please Enter First Name"
-                         value="${first_name}"/>
+            <input type="text" minlength="3" maxlength="50" name="first_name" class="form-control" placeholder="Εισαγωγή Ονόματος"
+                   required="required" pattern="^[α-ωΑ-Ωa-zA-Z]+$" title="Παρακαλώ εισάγεται μόνο γράμματα" value="${first_name}"/>
         </div>
     </div>
-
     <div class="form-group">
+        <h6 class="mb-0 ml-1 text-sm">ΕΠΩΝΥΜΟ</h6>
         <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-            <g:textField name="last_name" class="form-control" placeholder="Please Enter Last Name"
-                         value="${last_name}"/>
+            <input type="text" minlength="3" maxlength="50" name="last_name" class="form-control" placeholder="Εισαγωγή Επωνύμου"
+                   required="required" pattern="^[α-ωΑ-Ωa-zA-Z]+$" title="Παρακαλώ εισάγεται μόνο γράμματα" value="${last_name}"/>
         </div>
     </div>
-
     <div class="form-group">
+        <h6 class="mb-0 ml-1 text-sm">ΑΦΜ</h6>
         <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-            <input maxlength="9" name="afm" class="form-control" placeholder="Please Enter afm" value="${afm}"/>
+            <input type="text" minlength="9" maxlength="9" name="afm" class="form-control" placeholder="Εισαγωγή ΑΦΜ"
+                   required="required" pattern="^[0-9]*$" title="Παρακαλώ εισάγεται μόνο αριθμούς" value="${afm}"/>
+        </div>
+
+        <div class="form-group">
+            <h6 class="mb-0 ml-1 text-sm">ΗΜΕΡΟΜΗΝΙΑ ΓΕΝΝΗΣΗΣ</h6>
+            <div class="input-group"><span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                <g:field type="date" name="date_of_birth" class="form-control" required="required" value="${date_of_birth}"/>
+            </div>
         </div>
 
         <div class="form-group mt-4">
+            <h6 class="mb-0 ml-1 text-sm">ΤΜΗΜΑΤΑ</h6>
             <g:select class="form-control border mb-4" name="id_dep" from="${departments}" optionValue="name" optionKey="department_id"></g:select>
         </div>
-
         <div class="form-action-panel mt-2">
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-primary">ΑΠΟΘΗΚΕΥΣΗ</button>
             <g:link controller="employees" action="index">
-                <button type="button" class="btn btn-primary ml-2">Cancel</button>
+                <button type="button" class="btn btn-primary ml-2">ΑΚΥΡΩΣΗ</button>
             </g:link>
         </div>
     </div>

@@ -9,7 +9,7 @@
 <body>
     <g:if test="${flash.message}">
         <div class="alert alert-primary alert-dismissible" role="alert">
-            <a href="login" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <a href="/" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             <g:message message="${flash.message}"></g:message>
         </div>
     </g:if>
@@ -33,26 +33,23 @@
                         <div class="card2 card border-0 px-4 py-5">
                             <div class="row px-3"><label class="mb-1">
                                 <h6 class="mb-0 text-sm">Username</h6>
-                            </label> <g:textField name="user_name" class="form-control"/></div>
-
+                            </label> <input type="text" maxlength="10" name="user_name" class="form-control" placeholder="Εισαγωγή username"  required="required"/></div>
                             <div class="row px-3"><label class="mb-1">
                                 <h6 class="mb-0 text-sm">Password</h6>
-                            </label><g:passwordField name="user_password"/></div>
+                            </label><input type="text" maxlength="10" name="user_password" class="form-control" placeholder="Εισαγωγή password" required="required"/></div>
 
-                            <div class="row mb-3 px-3"><button type="submit" class="btn btn-primary mt-2">Login</button>
+                            <div class="row mb-3 px-3"><button type="submit" class="btn btn-primary mt-2">ΣΥΝΔΕΣΗ</button>
                             </div>
 
-                            <div class="row mb-4 px-3"><small class="font-weight-bold">Don't have an account? <g:link
+                            <div class="row mb-4 px-3"><small class="font-weight-bold">Δεν έχετε λογαριασμό? <g:link
                                     controller="signupUser" action="createUser"
-                                    class="btn btn-primary">Register</g:link></small></div>
+                                    class="btn btn-primary">ΕΓΓΡΑΦΗ</g:link></small></div>
                         </div>
                     </div>
                 </div>
-
                 <div class="bg-blue py-4">
                     <div class="row px-3"><small
                             class="ml-4 ml-sm-5 mb-2">Copyright &copy; 2021. All rights reserved.</small>
-
                         <div class="social-contact ml-4 ml-sm-auto"><span
                                 class="fa fa-facebook mr-4 text-sm"></span> <span
                                 class="fa fa-google-plus mr-4 text-sm"></span> <span

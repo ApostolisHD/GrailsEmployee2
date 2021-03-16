@@ -9,19 +9,20 @@
 <body>
 <div class="signup-form">
 <g:form controller="departments" action="updateDepartment" id="${department_id}" method="post">
-    <h2>Edit Department</h2>
+    <h2>Επεξεργασία Τμηματός</h2>
     <div class="form-group">
+        <h6 class="mb-0 ml-1 text-sm">ΟΝΟΜΑ ΤΜΗΜΑΤΟΣ</h6>
         <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-            <input maxlength="10" name="name" class="form-control" value="${name}" required="required"/>
+            <input minlength="1" maxlength="10" name="name" placeholder="Εισαγωγή Τμήματος" class="form-control" value="${name}" required="required"/>
         </div>
     </div>
         <div class="form-action-panel mt-2">
             <g:link controller="employees" action="index">
-                <button type="submit" class="btn btn-primary">Save</button>
+                <button type="submit" class="btn btn-primary">ΑΠΟΘΗΚΕΥΣΗ</button>
             </g:link>
             <g:link controller="employees" action="index">
-                <button type="button" class="btn btn-primary ml-2">Cancel</button>
+                <button type="button" class="btn btn-primary ml-2">ΑΚΥΡΩΣΗ</button>
             </g:link>
         </div>
     </div>

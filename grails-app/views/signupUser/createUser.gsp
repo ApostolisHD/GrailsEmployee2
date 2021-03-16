@@ -12,11 +12,9 @@
 <body>
     <div class="signup-form">
         <g:form controller="signupUser" action="signUp">
-            <h2>Sign Up</h2>
-
-            <p>Please fill in this form to create an account!</p>
+            <h2>Εγγραφή</h2>
+            <p>Παρακαλώ συμπληρώστε την φόρμα!</p>
             <hr>
-
             <div class="form-group">
                 <input type="user_name" class="form-control" name="user_name" placeholder="Username"
                        required="required">
@@ -28,12 +26,12 @@
             </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                <button type="submit" class="btn btn-primary btn-lg">ΕΓΓΡΑΦΗ</button>
             </div>
         </g:form>
-        <div class="hint-text">Already have an account?
+        <div class="hint-text">Έχετε ήδη λογαριασμό?
             <g:link controller="authentication" action="Login">
-            <button type="button" class="btn btn-primary ml-2">Login</button>
+            <button type="button" class="btn btn-primary ml-2">ΣΥΝΔΕΣΗ</button>
         </g:link>
         </div>
     </div>

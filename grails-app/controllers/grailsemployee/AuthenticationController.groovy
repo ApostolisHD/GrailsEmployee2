@@ -15,7 +15,7 @@ class AuthenticationController {
                 session["user"]= user
             redirect(controller: "employees", action: "index")
         } else {
-            flash.message = 'Wrong Credentials'
+            flash.message = 'Λαθος στοιχεια παρακαλω προσπαθηστε ξανα!'
             redirect(controller: "authentication", action: "Login")
         }
     }

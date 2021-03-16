@@ -13,7 +13,7 @@ class EmployeeService {
     def getAllEmployees() {
         def sql = new Sql(dataSource)
         try {
-            return sql.rows("""SELECT * 
+            return sql.rows("""SELECT * , to_char(date_of_birth, 'DD-MM-YYYY') as date_of_birth
                                FROM departments,employee 
                                WHERE departments.department_id=employee.id_dep ORDER BY employee_id ASC""")
             sql.close()
@@ -63,11 +63,11 @@ class EmployeeService {
         }
     }
 
-    def updateEmployee(Integer id, def first_name, def last_name, def afm, def id_dep) {
+    def updateEmployee(Integer id, def first_name, def last_name, def afm, def date_of_birth,def id_dep) {
         def sql = new Sql(dataSource)
         try {
             return sql.executeUpdate("""UPDATE employee 
-                                    SET first_name=${first_name},last_name=${last_name},afm=${afm},id_dep='${id_dep}' 
+                                    SET first_name=${first_name},last_name=${last_name},afm=${afm},date_of_birth='${date_of_birth}',id_dep='${id_dep}' 
                                     WHERE employee_id=${id}""")
             sql.close()
         }

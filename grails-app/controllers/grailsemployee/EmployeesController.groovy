@@ -17,9 +17,10 @@ class EmployeesController {
         [departments: departments]
     }
 
-    def save(Integer id_department) {
+    def save() {
         String date_of_birth = params.date_of_birth.replace("-", "/")
-        employeeService.createEmployee(params.first_name, params.last_name, params.afm, date_of_birth, id_department)
+        employeeService.createEmployee(params.first_name, params.last_name, params.afm, date_of_birth, params.id_dep)
+        println("params ${params}")
         redirect(action: "index")
     }
 
@@ -27,14 +28,16 @@ class EmployeesController {
         def response = employeeService.getEmployee(id)
         def departments = departmentService.getAllDepartments()
         if(!response) {
+            flash.error = 'Ο εργαζομενος δεν βρεθηκε!'
             redirect(action: "index")
             return errors
         }
-        [employee_id:id, first_name: response.first_name, last_name: response.last_name, afm:response.afm,departments:departments]
+        [employee_id:id, first_name: response.first_name, last_name: response.last_name, afm:response.afm,date_of_birth:response.date_of_birth,departments:departments]
     }
 
     def updateEmployee(Integer id) {
-        employeeService.updateEmployee(id, params.first_name, params.last_name, params.afm,params.id_dep)
+        String date_of_birth = params.date_of_birth.replace("-", "/")
+        employeeService.updateEmployee(id, params.first_name, params.last_name, params.afm,date_of_birth,params.id_dep)
         redirect(action: "index")
     }
 

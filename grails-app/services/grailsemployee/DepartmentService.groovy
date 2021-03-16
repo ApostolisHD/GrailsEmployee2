@@ -13,12 +13,11 @@ class DepartmentService {
     def getAllDepartments() {
         def sql = new Sql(dataSource)
         try {
-            return sql.rows("""SELECT * 
+            sql.rows("""SELECT * 
                                 FROM departments ORDER BY department_id ASC""")
         }
         catch (Exception e){
             println(e.getMessage())
-            return false
         }
     }
 

@@ -15,6 +15,7 @@ class DepartmentsController {
     def editDepartment(Integer id) {
         def response = departmentService.getDepartmentById(id)
         if(!response) {
+            flash.error = 'Το τμημα δεν βρεθηκε!'
             redirect(controller: "employees", action: "index")
             return errors
         }
@@ -33,7 +34,7 @@ class DepartmentsController {
             redirect(controller: "employees" , action: "index")
         }
         else {
-            flash.message = 'You cant delete a department with employees. You must delete the employees first'
+            flash.message = 'Δεν μπορεις να διαγραψεις αυτο το τμημα. Γιατι εχει εργαζομενους!'
             redirect(controller: "employees", action: "index")
         }
     }

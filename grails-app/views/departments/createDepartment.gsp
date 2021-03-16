@@ -10,18 +10,18 @@
 <body>
     <div class="signup-form">
         <g:form controller="departments" action="saveDepartment">
-            <h2>Create Department</h2>
+            <h2>Δημιουργία Τμήματος</h2>
             <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <input maxlength="10" name="name" class="form-control" placeholder="Please Enter Department"
+                    <input maxlength="10" name="name" class="form-control" placeholder="Εισαγωγή Τμήματος"
                            required="required"/>
                 </div>
             </div>
             <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Create</button>
+                    <button type="submit" class="btn btn-primary">ΔΗΜΙΟΡΓΙΑ</button>
                     <g:link controller="employees" action="index">
-                        <button type="button" class="btn btn-primary ml-2">Cancel</button>
+                        <button type="button" class="btn btn-primary ml-2">ΑΚΥΡΩΣΗ</button>
                     </g:link>
                 </div>
             </div>
