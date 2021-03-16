@@ -36,7 +36,7 @@
                             </label> <input type="text" maxlength="10" name="user_name" class="form-control" placeholder="Εισαγωγή username"  required="required"/></div>
                             <div class="row px-3"><label class="mb-1">
                                 <h6 class="mb-0 text-sm">Password</h6>
-                            </label><input type="text" maxlength="10" name="user_password" class="form-control" placeholder="Εισαγωγή password" required="required"/></div>
+                            </label><input type="password" maxlength="10" name="user_password" class="form-control" placeholder="Εισαγωγή password" required="required"/></div>
 
                             <div class="row mb-3 px-3"><button type="submit" class="btn btn-primary mt-2">ΣΥΝΔΕΣΗ</button>
                             </div>
