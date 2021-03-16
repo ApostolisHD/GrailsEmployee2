@@ -14,6 +14,10 @@ class DepartmentsController {
 
     def editDepartment(Integer id) {
         def response = departmentService.getDepartmentById(id)
+        if(!response) {
+            redirect(controller: "employees", action: "index")
+            return errors
+        }
         [department_id:response.department_id, name:response.name]
     }
 

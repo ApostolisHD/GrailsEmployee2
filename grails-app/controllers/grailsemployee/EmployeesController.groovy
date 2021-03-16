@@ -19,13 +19,17 @@ class EmployeesController {
 
     def save(Integer id_department) {
         String date_of_birth = params.date_of_birth.replace("-", "/")
-        employeeService.createEmployee(params.first_name, params.last_name, params.afm, date_of_birth, id_dep)
+        employeeService.createEmployee(params.first_name, params.last_name, params.afm, date_of_birth, id_department)
         redirect(action: "index")
     }
 
     def editEmployee(Integer id) {
         def response = employeeService.getEmployee(id)
         def departments = departmentService.getAllDepartments()
+        if(!response) {
+            redirect(action: "index")
+            return errors
+        }
         [employee_id:id, first_name: response.first_name, last_name: response.last_name, afm:response.afm,departments:departments]
     }
 
