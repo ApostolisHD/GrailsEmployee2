@@ -13,11 +13,9 @@ class AuthenticationService {
         try {
             def doLogin = sql.firstRow("""SELECT * 
                                             FROM users 
-                                            WHERE user_name=${user_name} AND user_password=${user_password}""")
+                                            WHERE user_name=${user_name} AND user_password=${user_password} AND user_active= true""")
             if (doLogin)
-                return sql.executeUpdate("""UPDATE users 
-                                    SET user_active=${true} 
-                                   WHERE user_name=${user_name} AND user_password=${user_password}""")
+                return doLogin
             else
                 return false
         }
@@ -31,7 +29,7 @@ class AuthenticationService {
         try {
             return sql.firstRow("""SELECT *
                                       FROM users 
-                                      WHERE user_name=${user_name} AND user_password=${user_password} AND user_active = ${true}""")
+                                      WHERE user_name=${user_name} AND user_password=${user_password} AND user_active= true""")
         }
         catch (Exception e) {
             println(e.getMessage())
