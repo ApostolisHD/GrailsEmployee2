@@ -16,12 +16,12 @@
             <p>Παρακαλώ συμπληρώστε την φόρμα!</p>
             <hr>
             <div class="form-group">
-                <input type="user_name" class="form-control" name="user_name" placeholder="Username"
+                <input type="user_name" maxlength="50" pattern="^[a-zA-Z]+$" class="form-control" name="user_name" placeholder="Username"
                        required="required">
             </div>
 
             <div class="form-group">
-                <input type="password" class="form-control" name="user_password" placeholder="Password"
+                <input type="password" maxlength="50" pattern="^[a-zA-Z]+$" class="form-control" name="user_password" placeholder="Password"
                        required="required">
             </div>
 
