@@ -1,9 +1,6 @@
 package grailsemployee
 
-
 class SecurityInterceptor {
-
-
     SecurityInterceptor() {
         matchAll().excludes(controller: "authentication").excludes(controller: "signupUser")
     }
@@ -15,5 +12,4 @@ class SecurityInterceptor {
         }
         return true
     }
-
 }
