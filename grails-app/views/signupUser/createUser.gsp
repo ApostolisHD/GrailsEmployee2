@@ -21,7 +21,7 @@
             </div>
 
             <div class="form-group">
-                <input type="password" maxlength="50" pattern="^[a-zA-Z]+$" class="form-control" name="user_password" placeholder="Password"
+                <input type="password" maxlength="50" pattern="^[a-zA-Z0-9]+$" class="form-control" name="user_password" placeholder="Password"
                        required="required">
             </div>
 
