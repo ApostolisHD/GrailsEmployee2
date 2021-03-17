@@ -14,13 +14,22 @@ class EmployeesController {
 
     def createEmployee() {
         def departments = departmentService.getAllDepartments()
+        if(!departments) {
+            flash.error = 'Πρέπει να φτιάξετε πρώτα τμήμα για συνεχίσετε!'
+            redirect(action: "index")
+            return errors
+        }
         [departments: departments]
     }
 
     def save() {
         String date_of_birth = params.date_of_birth.replace("-", "/")
-        employeeService.createEmployee(params.first_name, params.last_name, params.afm, date_of_birth, params.id_dep)
-        println("params ${params}")
+        def response = employeeService.createEmployee(params.first_name, params.last_name, params.afm, date_of_birth, params.id_dep)
+        if(!response) {
+            flash.error = 'Το ΑΦΜ που χρησιμοποιήσατε υπάρχει ήδη. Παρακαλώ γράψτε το δικό σας ΑΦΜ!'
+            redirect(action: "index")
+            return errors
+        }
         redirect(action: "index")
     }
 
