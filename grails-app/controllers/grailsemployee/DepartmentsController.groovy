@@ -2,10 +2,7 @@ package grailsemployee
 
 class DepartmentsController {
     DepartmentService departmentService
-
-    def createDepartment() {
-
-    }
+    def createDepartment() {}
 
     def saveDepartment(){
         departmentService.createDepartment(params.name)
@@ -13,13 +10,13 @@ class DepartmentsController {
     }
 
     def editDepartment(Integer id) {
-        def response = departmentService.getDepartmentById(id)
-        if(!response) {
+        def department = departmentService.getDepartmentById(id)
+        if(!department) {
             flash.error = 'Το τμημα δεν βρεθηκε!'
             redirect(controller: "employees", action: "index")
-            return errors
+            return null
         }
-        [department_id:response.department_id, name:response.name]
+        [department_id:department.department_id, name:department.name]
     }
 
     def updateDepartment(Integer id) {
@@ -28,9 +25,9 @@ class DepartmentsController {
     }
 
     def deleteDepartment(Integer id) {
-        def response = departmentService.deleteDepartment(id)
+        def department = departmentService.deleteDepartment(id)
 
-        if(response){
+        if(department){
             redirect(controller: "employees" , action: "index")
         }
         else {

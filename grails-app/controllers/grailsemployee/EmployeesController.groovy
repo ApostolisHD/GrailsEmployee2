@@ -24,22 +24,22 @@ class EmployeesController {
 
     def save() {
         String date_of_birth = params.date_of_birth.replace("-", "/")
-        def response = employeeService.createEmployee(params.first_name, params.last_name, params.afm, date_of_birth, params.id_dep)
-        if (!response) {
+        def employee = employeeService.createEmployee(params.first_name, params.last_name, params.afm, date_of_birth, params.id_dep)
+        if (!employee) {
             flash.error = 'Το ΑΦΜ που χρησιμοποιήσατε υπάρχει ήδη. Παρακαλώ γράψτε το δικό σας ΑΦΜ!'
         }
         redirect(action: "index")
     }
 
     def editEmployee(Integer id) {
-        def response = employeeService.getEmployee(id)
+        def employee = employeeService.getEmployee(id)
         def departments = departmentService.getAllDepartments()
-        if (!response) {
+        if (!employee) {
             flash.error = 'Ο εργαζομενος δεν βρεθηκε!'
             redirect(action: "index")
             return errors
         }
-        [employee_id: id, first_name: response.first_name, last_name: response.last_name, afm: response.afm, date_of_birth: response.date_of_birth, departments: departments]
+        [employee_id: id, first_name: employee.first_name, last_name: employee.last_name, afm: employee.afm, date_of_birth: employee.date_of_birth, departments: departments]
     }
 
     def updateEmployee(Integer id) {
