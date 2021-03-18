@@ -14,7 +14,8 @@ class DepartmentService {
                                 FROM departments ORDER BY department_id ASC""")
         }
         catch (Exception e) {
-            println(e.getMessage())
+            e.printStackTrace();
+            return []
         }
     }
 
@@ -25,8 +26,8 @@ class DepartmentService {
                                     VALUES (${name})""")
         }
         catch (Exception e) {
-            println(e.getMessage())
-            return false
+            e.printStackTrace();
+            return []
         }
     }
 
@@ -38,8 +39,8 @@ class DepartmentService {
                                     WHERE department_id = ${id}""")
         }
         catch (Exception e) {
-            println(e.getMessage())
-            return false
+            e.printStackTrace();
+            return null
         }
     }
 
@@ -51,19 +52,19 @@ class DepartmentService {
                                     WHERE department_id=${id}""")
         }
         catch (Exception e) {
-            println(e.getMessage())
-            return false
+            e.printStackTrace();
+            return -1
         }
     }
 
     def deleteDepartment(Integer id) {
         def sql = new Sql(dataSource)
         try {
-            return sql.executeUpdate("""DELETE FROM departments 
+            return sql.execute("""DELETE FROM departments 
                                     WHERE department_id=${id}""")
         }
         catch (Exception e) {
-            println(e.getMessage())
+            e.printStackTrace();
             return false
         }
     }

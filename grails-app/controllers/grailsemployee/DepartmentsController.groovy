@@ -26,7 +26,6 @@ class DepartmentsController {
 
     def deleteDepartment(Integer id) {
         def department = departmentService.deleteDepartment(id)
-
         if (department) {
             redirect(controller: "employees", action: "index")
         } else {

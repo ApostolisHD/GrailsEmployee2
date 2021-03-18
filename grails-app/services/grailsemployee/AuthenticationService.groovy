@@ -20,7 +20,8 @@ class AuthenticationService {
                 return false
         }
         catch (Exception e) {
-            println(e.getMessage())
+            e.printStackTrace();
+            return []
         }
     }
 
@@ -32,8 +33,8 @@ class AuthenticationService {
                                       WHERE user_name=${user_name} AND user_password=${user_password} AND user_active= true""")
         }
         catch (Exception e) {
-            println(e.getMessage())
-            return false
+            e.printStackTrace();
+            return null
         }
     }
 

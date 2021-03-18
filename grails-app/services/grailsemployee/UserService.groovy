@@ -15,8 +15,8 @@ class UserService {
                                     VALUES (${user_name},${user_password},true)""")
         }
         catch (Exception e){
-            println(e.getMessage())
-            return false
+            e.printStackTrace();
+            return []
         }
     }
 }
