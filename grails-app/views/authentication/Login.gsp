@@ -32,11 +32,11 @@
                     <div class="col-lg-6">
                         <div class="card2 card border-0 px-4 py-5">
                             <div class="row px-3">
-                                <label class="mb-1">Username</label>
-                                <input type="text" maxlength="50" name="user_name" class="form-control" placeholder="Εισαγωγή username"  required="required"/></div>
-                            <div class="row px-3"><label class="mb-1">
-                                <h6 class="mb-0 text-sm">Password</h6>
-                            </label><input type="password" maxlength="50" name="user_password" class="form-control" placeholder="Εισαγωγή password" required="required"/></div>
+                                <label class="mb-1" for="user_name">Username</label>
+                                <input type="text" id="user_name"maxlength="50" name="user_name" class="form-control" placeholder="Εισαγωγή username"  required="required"/></div>
+                            <div class="row px-3">
+                                <label class="mb-1" for="user_password">Password</label>
+                                <input type="password" id="user_password" maxlength="50" name="user_password" class="form-control" placeholder="Εισαγωγή password" required="required"/></div>
 
                             <div class="row mb-3 px-3"><button type="submit" class="btn btn-primary mt-2">ΣΥΝΔΕΣΗ</button>
                             </div>

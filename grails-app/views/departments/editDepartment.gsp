@@ -11,10 +11,10 @@
 <g:form controller="departments" action="updateDepartment" id="${department_id}" method="post">
     <h2>Επεξεργασία Τμηματός</h2>
     <div class="form-group">
-        <h6 class="mb-0 ml-1 text-sm">ΟΝΟΜΑ ΤΜΗΜΑΤΟΣ</h6>
+        <label class="mb-0 ml-1 text-sm" for="name">ΟΝΟΜΑ ΤΜΗΜΑΤΟΣ</label>
         <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-            <input minlength="1" maxlength="10" name="name" placeholder="Εισαγωγή Τμήματος" class="form-control" value="${name}" required="required"/>
+            <input minlength="1" maxlength="10" id="name" name="name" placeholder="Εισαγωγή Τμήματος" class="form-control" value="${name}" required="required"/>
         </div>
     </div>
         <div class="form-action-panel mt-2">
