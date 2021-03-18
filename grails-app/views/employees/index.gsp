@@ -98,7 +98,7 @@
                                                 <g:link controller="employees" action="editEmployee" class="btn btn-secondary"
                                                         id="${it.employee_id}">ΕΠΕΞΕΡΓΑΣΙΑ</g:link>
                                                 <g:link controller="employees" action="deleteEmployee" class="btn btn-secondary"
-                                                        id="${it.employee_id}">ΔΙΑΓΡΑΦΗ</g:link>
+                                                        id="${it.employee_id}" onclick="return confirm('Ειστε σίγουρος οτι θέλετε να διαγράψετε τον εργαζόμενο?')">ΔΙΑΓΡΑΦΗ</g:link>
                                             </td>
                                         </tr>
                                     </g:each>
@@ -143,7 +143,7 @@
                                                     <g:link controller="departments" action="editDepartment" class="btn btn-secondary"
                                                             id="${it.department_id}">ΕΠΕΞΕΡΓΑΣΙΑ</g:link>
                                                     <g:link controller="departments" action="deleteDepartment" class="btn btn-secondary"
-                                                            id="${it.department_id}">ΔΙΑΓΡΑΦΗ</g:link>
+                                                            id="${it.department_id}" onclick="return confirm('Ειστε σίγουρος οτι θέλετε να διαγράψετε το τμήμα?')">ΔΙΑΓΡΑΦΗ</g:link>
                                                 </td>
                                             </tr>
                                         </g:each>
