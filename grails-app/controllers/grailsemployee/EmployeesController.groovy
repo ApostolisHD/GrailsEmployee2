@@ -1,9 +1,8 @@
 package grailsemployee
 
 class EmployeesController {
-    EmployeeService employeeService
-    DepartmentService departmentService
-
+    def employeeService
+    def departmentService
 
     def index() {
         def employees = employeeService.getAllEmployees()
@@ -52,5 +51,4 @@ class EmployeesController {
         employeeService.deleteEmployee(id)
         redirect(action: "index")
     }
-
 }
