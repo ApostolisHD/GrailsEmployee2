@@ -31,9 +31,9 @@
 
                     <div class="col-lg-6">
                         <div class="card2 card border-0 px-4 py-5">
-                            <div class="row px-3"><label class="mb-1">
-                                <h6 class="mb-0 text-sm">Username</h6>
-                            </label> <input type="text" maxlength="50" name="user_name" class="form-control" placeholder="Εισαγωγή username"  required="required"/></div>
+                            <div class="row px-3">
+                                <label class="mb-1">Username</label>
+                                <input type="text" maxlength="50" name="user_name" class="form-control" placeholder="Εισαγωγή username"  required="required"/></div>
                             <div class="row px-3"><label class="mb-1">
                                 <h6 class="mb-0 text-sm">Password</h6>
                             </label><input type="password" maxlength="50" name="user_password" class="form-control" placeholder="Εισαγωγή password" required="required"/></div>
@@ -42,7 +42,7 @@
                             </div>
 
                             <div class="row mb-4 px-3"><small class="font-weight-bold">Δεν έχετε λογαριασμό? <g:link
-                                    controller="signupUser" action="createUser"
+                                    controller="user" action="createUser"
                                     class="btn btn-primary">ΕΓΓΡΑΦΗ</g:link></small></div>
                         </div>
                     </div>

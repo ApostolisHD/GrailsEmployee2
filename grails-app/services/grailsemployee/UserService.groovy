@@ -5,7 +5,7 @@ import groovy.sql.Sql
 import javax.transaction.Transactional
 
 @Transactional
-class SignUpUserService {
+class UserService {
     def dataSource
 
     def createUser(def user_name, def user_password) {

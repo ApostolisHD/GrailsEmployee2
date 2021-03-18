@@ -11,7 +11,7 @@
 
 <body>
     <div class="signup-form">
-        <g:form controller="signupUser" action="signUp">
+        <g:form controller="user" action="signUp">
             <h2>Εγγραφή</h2>
             <p>Παρακαλώ συμπληρώστε την φόρμα!</p>
             <hr>

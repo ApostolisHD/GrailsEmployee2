@@ -2,7 +2,7 @@ package grailsemployee
 
 class SecurityInterceptor {
     SecurityInterceptor() {
-        matchAll().excludes(controller: "authentication").excludes(controller: "signupUser")
+        matchAll().excludes(controller: "authentication").excludes(controller: "user")
     }
 
     boolean before() {
