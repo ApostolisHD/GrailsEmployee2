@@ -3,15 +3,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
     <title>Employee Management</title>
     <asset:javascript src="jquery-3.3.1.min.js"/>
     <asset:javascript src="popper.min.js"/>
     <asset:javascript src="bootstrap.min.js"/>
     <asset:stylesheet src="bootstrap.min.css"/>
+    <asset:stylesheet src="bootstrap-icons.css"/>
     <asset:stylesheet src="styles.css"/>
 </head>
-
 
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
