@@ -10,7 +10,8 @@ class EmployeeApiController {
     }
 
     def createEmployee() {
-        def employee= employeeService.createEmployee(params.first_name, params.last_name, params.afm, params.date_of_birth, params.id_dep.toInteger())
+        println("params${request.JSON}")
+        def employee= employeeService.createEmployee(request.JSON.first_name, request.JSON.last_name, request.JSON.afm, request.JSON.date_of_birth, request.JSON.id_dep)
         if(employee){
             respond("employee":employee, status: 201)
         }

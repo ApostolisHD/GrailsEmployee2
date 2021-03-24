@@ -7,7 +7,7 @@ class DepartmentApiController {
 
     def getAllDepartments() {
         def departments = departmentService.getAllDepartments()
-        respond("departments": departments, status: 200)
+        respond(departments, status: 200)
     }
 
     def createDepartment() {
