@@ -11,7 +11,8 @@ class DepartmentApiController {
     }
 
     def createDepartment() {
-        def department = departmentService.createDepartment(params.name)
+        println("params${request.JSON}")
+        def department = departmentService.createDepartment(request.JSON.name)
         if (department)
             respond("department": department, status: 201)
         else
@@ -23,7 +24,8 @@ class DepartmentApiController {
     }
 
     def editDepartment(Integer id) {
-        def department = departmentService.updateDepartment(id, params.name)
+        println("params${request.JSON}")
+        def department = departmentService.updateDepartment(id, request.JSON.name)
         if (department)
             respond("department": department, status: 201)
         else
