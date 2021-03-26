@@ -13,10 +13,10 @@ class EmployeeApiController {
         println("params${request.JSON}")
         def employee= employeeService.createEmployee(request.JSON.first_name, request.JSON.last_name, request.JSON.afm, request.JSON.date_of_birth, request.JSON.id_dep)
         if(employee){
-            respond("employee":employee, status: 201)
+            respond("employee":employee, status: 200)
         }
         else {
-            respond("error":null , status: 400)
+            respond("error":null , status: 500)
         }
     }
 
@@ -25,22 +25,23 @@ class EmployeeApiController {
     }
 
     def editEmployee(Integer id) {
-        def employee= employeeService.updateEmployee(id, params.first_name, params.last_name, params.afm, params.date_of_birth, params.id_dep.toInteger())
+        println("params ${request.JSON}")
+        def employee= employeeService.updateEmployee(id, request.JSON.first_name, request.JSON.last_name, request.JSON.afm, request.JSON.date_of_birth, request.JSON.id_dep.toInteger())
         if(employee){
-            respond("employee":employee, status: 201)
+            respond("employee":employee, status: 200)
         }
         else {
-            respond("error":null , status: 400)
+            respond("error":null , status: 500)
         }
     }
 
     def deleteEmployee(Integer id) {
         def employee= employeeService.deleteEmployee(id)
         if(employee){
-            respond("employee":employee, status: 201)
+            respond("employee":employee, status: 200)
         }
         else {
-            respond("error":null , status: 400)
+            respond("error":null , status: 500)
         }
     }
 }

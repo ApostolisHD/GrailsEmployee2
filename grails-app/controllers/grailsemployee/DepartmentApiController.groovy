@@ -14,9 +14,9 @@ class DepartmentApiController {
         println("params${request.JSON}")
         def department = departmentService.createDepartment(request.JSON.name)
         if (department)
-            respond("department": department, status: 201)
+            respond("department": department, status: 200)
         else
-            respond("error": null, status: 400)
+            respond("error": null, status: 500)
     }
 
     def showDepartmentById(Integer id) {
@@ -24,12 +24,11 @@ class DepartmentApiController {
     }
 
     def editDepartment(Integer id) {
-        println("params${request.JSON}")
         def department = departmentService.updateDepartment(id, request.JSON.name)
         if (department)
-            respond("department": department, status: 201)
+            respond("department": department, status: 200)
         else
-            respond("error": null, status: 400)
+            respond("error": null, status: 500)
     }
 
     def deleteDepartment(Integer id) {
@@ -37,6 +36,6 @@ class DepartmentApiController {
         if (department)
             respond("department": department, status: 201)
         else
-            respond("error": null, status: 400)
+            respond("error": null, status: 500)
     }
 }
