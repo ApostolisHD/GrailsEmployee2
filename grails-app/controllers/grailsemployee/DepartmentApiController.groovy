@@ -34,7 +34,7 @@ class DepartmentApiController {
     def deleteDepartment(Integer id) {
         def department = departmentService.deleteDepartment(id)
         if (department)
-            respond("department": department, status: 201)
+            respond("department": department, status: 200)
         else
             respond("error": null, status: 500)
     }

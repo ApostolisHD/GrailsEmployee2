@@ -60,12 +60,12 @@ class DepartmentService {
     def deleteDepartment(Integer id) {
         def sql = new Sql(dataSource)
         try {
-            return sql.execute("""DELETE FROM departments 
+            return sql.executeUpdate("""DELETE FROM departments 
                                     WHERE department_id=${id}""")
         }
         catch (Exception e) {
             e.printStackTrace();
-            return false
+            return -1
         }
     }
 }
