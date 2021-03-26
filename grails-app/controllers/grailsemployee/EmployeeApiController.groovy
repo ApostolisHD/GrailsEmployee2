@@ -25,7 +25,8 @@ class EmployeeApiController {
     }
 
     def editEmployee(Integer id) {
-        def employee= employeeService.updateEmployee(id, request.JSON.first_name, request.JSON.last_name, request.JSON.afm, request.JSON.date_of_birth, request.JSON.id_dep)
+        println("params ${request.JSON}")
+        def employee= employeeService.updateEmployee(id, request.JSON.first_name, request.JSON.last_name, request.JSON.afm, request.JSON.date_of_birth, request.JSON.id_dep.toInteger())
         if(employee){
             respond("employee":employee, status: 200)
         }
