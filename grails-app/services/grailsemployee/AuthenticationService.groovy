@@ -38,16 +38,4 @@ class AuthenticationService {
         }
     }
 
-//    def logOut(def user_id) {
-//        def sql = new Sql(dataSource)
-//        try {
-//            sql.executeUpdate("""UPDATE users
-//                                    SET user_active=${false}
-//                                    WHERE user_id=${user_id}""")
-//            sql.close()
-//        }
-//        catch (Exception e){
-//            println(e.getMessage())
-//        }
-//    }
 }

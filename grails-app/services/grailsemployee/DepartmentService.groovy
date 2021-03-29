@@ -47,25 +47,25 @@ class DepartmentService {
     def updateDepartment(def id, def name) {
         def sql = new Sql(dataSource)
         try {
-            return sql.executeUpdate("""UPDATE departments 
+            return sql.execute("""UPDATE departments 
                                     SET name=${name} 
                                     WHERE department_id=${id}""")
         }
         catch (Exception e) {
             e.printStackTrace();
-            return -1
+            return []
         }
     }
 
     def deleteDepartment(Integer id) {
         def sql = new Sql(dataSource)
         try {
-            return sql.executeUpdate("""DELETE FROM departments 
+            return sql.execute("""DELETE FROM departments 
                                     WHERE department_id=${id}""")
         }
         catch (Exception e) {
             e.printStackTrace();
-            return -1
+            return []
         }
     }
 }
