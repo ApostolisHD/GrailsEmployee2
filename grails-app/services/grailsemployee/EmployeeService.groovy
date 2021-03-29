@@ -35,8 +35,9 @@ class EmployeeService {
     def deleteEmployee(Integer id) {
         def sql = new Sql(dataSource)
         try {
-            return sql.execute("""DELETE FROM employee 
+            sql.execute("""DELETE FROM employee 
                                     WHERE employee_id=${id}""")
+            return true
         }
         catch (Exception e) {
             e.printStackTrace();

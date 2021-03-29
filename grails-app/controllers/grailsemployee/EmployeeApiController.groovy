@@ -4,7 +4,9 @@ class EmployeeApiController {
     def employeeService
     static responseFormats = ['json']
 
+
     def getAllEmployees() {
+        println("params=${request.cookies}")
         def employees = employeeService.getAllEmployees()
         respond (employees, status: 200)
     }

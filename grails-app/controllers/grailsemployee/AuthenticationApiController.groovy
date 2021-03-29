@@ -1,16 +1,24 @@
 package grailsemployee
+import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.*
+import javax.servlet.http.Cookie;
 
 class AuthenticationApiController {
     static responseFormats = ['json']
     def authenticationService
 
     def login() {
-        println("params${params}")
-        if (authenticationService.login(params.user_name, params.user_password)) {
-            authenticationService.getUserid(params.user_name, params.user_password)
-            def user = [user_name: params.user_name]
-            session["user"] = user
-            respond(status: 200, sessionVarible: session["user"])
+        if (authenticationService.login(request.JSON.user_name, request.JSON.user_password)) {
+            def user = request.getJSON().user_name
+            response.setCookie('user', user)
+            Algorithm algorithm = Algorithm.HMAC256("secret");
+            String token = JWT.create().withClaim("user",request.getCookie('user')).sign(algorithm)
+//            Cookie homeCookie = new Cookie('user_name','token')
+//            homeCookie.path = '/'
+//            homeCookie.maxAge = 3600
+//            response.addCookie homeCookie
+//            println("params=${request.getCookie('user')}")
+            respond(status: 200, cookie:token)
         } else {
             respond(status: 500)
         }

@@ -38,6 +38,7 @@ management:
 grails:
     cors:
         enabled: true
+        allowCredentials: true
     mime:
         disable:
             accept:

@@ -11,7 +11,7 @@ class UrlMappings {
 
         "/"(controller: "authentication", action: "Login")
 
-        "/authentication"(controller:"authenticationApi",action:"login",method:"GET")
+        "/authentication"(controller:"authenticationApi",action:"login",method:"POST")
         "/authentication/logout"(controller:"authenticationApi",action:"logout",method:"GET")
 
         "/employee"(controller: "employeeApi", action: "getAllEmployees", method: "GET")
