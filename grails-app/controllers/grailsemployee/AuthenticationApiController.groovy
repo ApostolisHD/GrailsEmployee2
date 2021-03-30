@@ -15,6 +15,7 @@ class AuthenticationApiController {
             token = JWT.create().withIssuer("auth0").withClaim("userName",userName).sign(algorithm)
             Cookie homeCookie = new Cookie('userName',token)
             homeCookie.maxAge = 3600
+            homeCookie.setPath("/")
             homeCookie.httpOnly = true
             response.setCookie(homeCookie)
             respond(status: 200)
@@ -26,6 +27,8 @@ class AuthenticationApiController {
     def logout() {
         Cookie homeCookie = new Cookie('userName',token)
         homeCookie.maxAge = 3600
+        homeCookie.setPath("/")
+        homeCookie.httpOnly = true
         response.setCookie(homeCookie)
         respond(status: 200)
     }
