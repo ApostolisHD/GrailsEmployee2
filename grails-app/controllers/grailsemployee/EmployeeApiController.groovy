@@ -1,13 +1,15 @@
 package grailsemployee
+import com.auth0.jwt.*
+import com.auth0.jwt.algorithms.Algorithm
+import com.auth0.jwt.interfaces.DecodedJWT
 
 class EmployeeApiController {
     def employeeService
     static responseFormats = ['json']
 
-
     def getAllEmployees() {
-        println("params=${request.cookies}")
         def employees = employeeService.getAllEmployees()
+        println("params${request.getCookie("userName")}")
         respond (employees, status: 200)
     }
 
