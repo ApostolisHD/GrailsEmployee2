@@ -25,7 +25,7 @@ class AuthenticationApiController {
     }
 
     def logout() {
-        Cookie homeCookie = new Cookie('userName',token)
+        Cookie homeCookie = new Cookie('userName',null)
         homeCookie.maxAge = 3600
         homeCookie.setPath("/")
         homeCookie.httpOnly = true
