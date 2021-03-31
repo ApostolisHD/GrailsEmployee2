@@ -13,6 +13,7 @@ class UrlMappings {
 
         "/authentication"(controller:"authenticationApi",action:"login",method:"POST")
         "/authentication/logout"(controller:"authenticationApi",action:"logout",method:"GET")
+        "/authentication/userName"(controller:"authenticationApi",action:"findUser",method:"GET")
         "/user"(controller:"userApi",action:"signUp",method:"POST")
 
         "/employee"(controller: "employeeApi", action: "getAllEmployees", method: "GET")

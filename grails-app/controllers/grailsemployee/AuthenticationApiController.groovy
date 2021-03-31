@@ -18,10 +18,15 @@ class AuthenticationApiController {
             homeCookie.setPath("/")
             homeCookie.httpOnly = true
             response.addCookie(homeCookie)
-            respond(status: 200, name: userName)
+            session['userName'] = userName
+            respond(status: 200)
         } else {
             respond(status: 500)
         }
+    }
+
+    def findUser(){
+        respond(status: 200, userName:session['userName'])
     }
 
     def logout() {
@@ -30,6 +35,7 @@ class AuthenticationApiController {
         homeCookie.setPath("/")
         homeCookie.httpOnly = true
         response.addCookie(homeCookie)
+        session.invalidate()
         respond(status: 200)
     }
 }
