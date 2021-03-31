@@ -25,6 +25,7 @@ class DepartmentApiController {
 
     def editDepartment(Integer id) {
         def department = departmentService.updateDepartment(id, request.JSON.name)
+        println("${request.JSON.name}")
         if (department)
             respond("department": department, status: 200)
         else
