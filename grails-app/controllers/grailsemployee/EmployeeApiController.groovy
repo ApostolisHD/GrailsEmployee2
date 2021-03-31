@@ -15,7 +15,6 @@ class EmployeeApiController {
     }
 
     def createEmployee() {
-        println("params${request.JSON}")
         def employee= employeeService.createEmployee(request.JSON.first_name, request.JSON.last_name, request.JSON.afm, request.JSON.date_of_birth, request.JSON.id_dep)
         if(employee){
             respond("employee":employee, status: 200)
@@ -30,7 +29,6 @@ class EmployeeApiController {
     }
 
     def editEmployee(Integer id) {
-        println("params ${request.JSON}")
         def employee= employeeService.updateEmployee(id, request.JSON.first_name, request.JSON.last_name, request.JSON.afm, request.JSON.date_of_birth, request.JSON.id_dep)
         if(employee){
             respond("employee":employee, status: 200)

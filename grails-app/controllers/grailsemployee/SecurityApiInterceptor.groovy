@@ -9,7 +9,7 @@ import com.auth0.jwt.interfaces.DecodedJWT
 class SecurityApiInterceptor {
 
     SecurityApiInterceptor() {
-        matchAll().excludes(controller: "authenticationApi")
+        matchAll().excludes(controller: "authenticationApi").excludes(controller: "userApi")
     }
 
     boolean before() {

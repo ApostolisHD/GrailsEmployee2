@@ -6,10 +6,10 @@ class SecurityInterceptor {
     }
 
     boolean before() {
-        if (!session["user"]) {
-            redirect(controller: "authentication", action: "Login")
-            return false
-        }
+//        if (!session["user"]) {
+//            redirect(controller: "authentication", action: "Login")
+//            return false
+//        }
         return true
     }
 }
