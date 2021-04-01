@@ -26,10 +26,14 @@ class EmployeeApiController {
 
     def showEmployeeById(Integer id) {
         def employee = employeeService.getEmployee(id)
-        if (employee) {
-            respond("employee": employee, status: 200)
-        } else {
-            respond("error": null, status: 404)
+        try {
+            if (employee) {
+                respond("employee": employee, status: 200)
+            } else {
+                respond("error": null, status: 404)
+            }
+        }catch(Exception e){
+            respond("error": null, status: 500)
         }
     }
 

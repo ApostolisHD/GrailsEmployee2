@@ -20,10 +20,15 @@ class DepartmentApiController {
 
     def showDepartmentById(Integer id) {
         def department=departmentService.getDepartmentById(id)
-        if (department)
-            respond("department": department, status: 200)
-        else
-            respond("error": null, status: 404)
+        try {
+            if (department) {
+                respond("department": department, status: 200)
+            } else {
+                respond("error": null, status: 404)
+            }
+        }catch(Exception e){
+            respond("error": null, status: 500)
+        }
     }
 
     def editDepartment(Integer id) {
