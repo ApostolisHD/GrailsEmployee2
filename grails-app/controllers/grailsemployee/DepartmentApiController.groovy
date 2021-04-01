@@ -11,41 +11,45 @@ class DepartmentApiController {
     }
 
     def createDepartment() {
-        def department = departmentService.createDepartment(request.JSON.name)
-        if (department)
+        try {
+            def department = departmentService.createDepartment(request.JSON.name)
             respond("department": department, status: 201)
-        else
+        }
+        catch (Exception) {
             respond("error": null, status: 400)
+        }
     }
 
     def showDepartmentById(Integer id) {
-        def department=departmentService.getDepartmentById(id)
+        def department = departmentService.getDepartmentById(id)
         try {
             if (department) {
                 respond("department": department, status: 200)
             } else {
                 respond("error": null, status: 404)
             }
-        }catch(Exception e){
+        } catch (Exception) {
             respond("error": null, status: 500)
         }
     }
 
     def editDepartment(Integer id) {
-        def department = departmentService.updateDepartment(id, request.JSON.name)
-        if (department) {
+        try {
+            def department = departmentService.updateDepartment(id, request.JSON.name)
             respond("department": department, status: 200)
         }
-        else {
+        catch (Exception) {
             respond("error": null, status: 400)
         }
     }
 
     def deleteDepartment(Integer id) {
-        def department = departmentService.deleteDepartment(id)
-        if (department)
+        try {
+            def department = departmentService.deleteDepartment(id)
             respond("department": department, status: 202)
-        else
+        }
+        catch (Exception) {
             respond("error": null, status: 400)
+        }
     }
 }

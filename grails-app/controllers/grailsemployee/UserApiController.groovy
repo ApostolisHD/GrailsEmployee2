@@ -15,7 +15,7 @@ class UserApiController {
             def userName = request.JSON.user_name
             Algorithm algorithm = Algorithm.HMAC256("0b475a9e-a293-4554-b277-ddee82e2d392");
             String token = JWT.create().withIssuer("auth0").withClaim("userName", userName).sign(algorithm)
-            Cookie homeCookie = new Cookie('userName', token)
+            Cookie homeCookie = new Cookie('authentication', token)
             homeCookie.maxAge = 3600
             homeCookie.setPath("/")
             homeCookie.httpOnly = true

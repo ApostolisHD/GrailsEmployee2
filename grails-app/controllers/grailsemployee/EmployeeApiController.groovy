@@ -16,10 +16,10 @@ class EmployeeApiController {
     }
 
     def createEmployee() {
-        def employee = employeeService.createEmployee(request.JSON.first_name, request.JSON.last_name, request.JSON.afm, request.JSON.date_of_birth, request.JSON.id_dep)
-        if (employee) {
+        try {
+            def employee = employeeService.createEmployee(request.JSON.first_name, request.JSON.last_name, request.JSON.afm, request.JSON.date_of_birth, request.JSON.id_dep)
             respond("employee": employee, status: 201)
-        } else {
+        } catch (Exception) {
             respond("error": null, status: 400)
         }
     }
@@ -32,25 +32,25 @@ class EmployeeApiController {
             } else {
                 respond("error": null, status: 404)
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             respond("error": null, status: 500)
         }
     }
 
     def editEmployee(Integer id) {
-        def employee = employeeService.updateEmployee(id, request.JSON.first_name, request.JSON.last_name, request.JSON.afm, request.JSON.date_of_birth, request.JSON.id_dep)
-        if (employee) {
-            respond("employee": employee,status: 200)
-        } else {
+        try {
+            def employee = employeeService.updateEmployee(id, request.JSON.first_name, request.JSON.last_name, request.JSON.afm, request.JSON.date_of_birth, request.JSON.id_dep)
+            respond("employee": employee, status: 200)
+        } catch (Exception) {
             respond("error": null, status: 400)
         }
     }
 
     def deleteEmployee(Integer id) {
-        def employee = employeeService.deleteEmployee(id)
-        if (employee) {
+        try {
+            def employee = employeeService.deleteEmployee(id)
             respond("employee": employee, status: 202)
-        } else {
+        } catch (Exception) {
             respond("error": null, status: 400)
         }
     }
