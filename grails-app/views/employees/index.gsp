@@ -24,7 +24,7 @@
                            ${session.user.user_name}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <g:link controller="authentication" action="logout" class="dropdown-item">ΑΠΟΣΥΝΔΕΣΗ</g:link>
+                            <g:link controller="authentication" action="Logout" class="dropdown-item">ΑΠΟΣΥΝΔΕΣΗ</g:link>
                         </div>
                     </li>
                 </ul>

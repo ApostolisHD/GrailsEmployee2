@@ -16,7 +16,7 @@ class AuthenticationController {
         }
     }
 
-    def logout() {
+    def Logout() {
         session.invalidate()
         redirect(action: "Login")
     }

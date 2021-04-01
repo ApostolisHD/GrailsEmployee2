@@ -11,7 +11,7 @@ class AuthenticationApiController {
     def authenticationService
 
 
-    def login() {
+    def Login() {
         if (authenticationService.login(request.JSON.user_name, request.JSON.user_password)) {
             def userName = request.JSON.user_name
             Algorithm algorithm = Algorithm.HMAC256("0b475a9e-a293-4554-b277-ddee82e2d392");
