@@ -62,10 +62,9 @@ class EmployeeService {
     def updateEmployee(Integer id, def first_name, def last_name, def afm, def date_of_birth, def id_dep) {
         def sql = new Sql(dataSource)
         try {
-            def update = sql.executeUpdate("""UPDATE employee 
+            return sql.executeUpdate("""UPDATE employee 
                                     SET first_name=${first_name},last_name=${last_name},afm=${afm},date_of_birth='${date_of_birth}',id_dep='${id_dep}' 
                                     WHERE employee_id=${id}""")
-            return update
         }
         catch (Exception e) {
             e.printStackTrace();

@@ -1,6 +1,9 @@
 package grailsemployee
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.*
+import com.auth0.jwt.exceptions.JWTDecodeException
+import com.auth0.jwt.interfaces.DecodedJWT
+
 import javax.servlet.http.Cookie;
 
 class AuthenticationApiController {
@@ -18,15 +21,21 @@ class AuthenticationApiController {
             homeCookie.setPath("/")
             homeCookie.httpOnly = true
             response.addCookie(homeCookie)
-            session['userName'] = userName
             respond(status: 200)
         } else {
-            respond(status: 500)
+            respond(status: 401)
         }
     }
 
     def findUser(){
-        respond(status: 200, userName:session['userName'])
+        def token = request.getCookies().find{ 'userName' == it.name }?.value
+        try {
+            DecodedJWT jwt = JWT.decode(token)
+//            println("params=${jwt.getClaim("userName")}")
+            respond(status: 200)
+        } catch (JWTDecodeException exception){
+            respond(status: 401)
+        }
     }
 
     def logout() {

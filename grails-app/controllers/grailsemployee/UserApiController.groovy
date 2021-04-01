@@ -20,9 +20,9 @@ class UserApiController {
             homeCookie.setPath("/")
             homeCookie.httpOnly = true
             response.addCookie(homeCookie)
-            respond(status: 200)
+            respond(status: 201)
         } else {
-            respond(status: 500)
+            respond(status: 400)
         }
     }
 }

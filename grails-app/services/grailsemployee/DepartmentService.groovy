@@ -47,10 +47,9 @@ class DepartmentService {
     def updateDepartment(def id, def name) {
         def sql = new Sql(dataSource)
         try {
-            def update= sql.executeUpdate("""UPDATE departments 
+            return sql.executeUpdate("""UPDATE departments 
                                     SET name=${name} 
                                     WHERE department_id=${id}""")
-            return update
         }
         catch (Exception e) {
             e.printStackTrace();
