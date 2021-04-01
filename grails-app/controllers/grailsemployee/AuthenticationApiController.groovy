@@ -44,7 +44,6 @@ class AuthenticationApiController {
         homeCookie.setPath("/")
         homeCookie.httpOnly = true
         response.addCookie(homeCookie)
-        session.invalidate()
         respond(status: 200)
     }
 }
