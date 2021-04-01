@@ -13,7 +13,7 @@ class SecurityApiInterceptor {
     }
 
     boolean before() {
-        def token = request.getCookies().find{ 'userName' == it.name }?.value
+        def token = request.getCookies().find{ 'authentication' == it.name }?.value
         if (token != null) {
             try {
                 Algorithm algorithm = Algorithm.HMAC256("0b475a9e-a293-4554-b277-ddee82e2d392");
