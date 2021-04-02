@@ -27,7 +27,7 @@ class DepartmentService {
         }
         catch (Exception e) {
             e.printStackTrace();
-            return []
+            return null
         }
     }
 
@@ -53,7 +53,7 @@ class DepartmentService {
         }
         catch (Exception e) {
             e.printStackTrace();
-            return []
+            return null
         }
     }
 

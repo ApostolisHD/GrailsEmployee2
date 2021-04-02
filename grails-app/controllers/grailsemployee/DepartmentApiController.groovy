@@ -13,11 +13,15 @@ class DepartmentApiController {
     def createDepartment() {
         try {
             def department = departmentService.createDepartment(request.JSON.name)
-            respond("department": department, status: 201)
+            if (department != null) {
+                respond("department": department, status: 201)
+            } else {
+                respond("error": null, status: 400)
+            }
         }
         catch (Exception exception) {
             exception.printStackTrace()
-            respond("error": null, status: 400)
+            respond("error": null, status: 500)
         }
     }
 
@@ -38,11 +42,15 @@ class DepartmentApiController {
     def editDepartment(Integer id) {
         try {
             def department = departmentService.updateDepartment(id, request.JSON.name)
-            respond("department": department, status: 200)
+            if (department != null) {
+                respond("department": department, status: 200)
+            } else {
+                respond("error": null, status: 400)
+            }
         }
         catch (Exception exception) {
             exception.printStackTrace()
-            respond("error": null, status: 400)
+            respond("error": null, status: 500)
         }
     }
 

@@ -55,7 +55,7 @@ class EmployeeService {
         }
         catch (Exception e) {
             e.printStackTrace();
-            return []
+            return null
         }
     }
 
@@ -68,7 +68,7 @@ class EmployeeService {
         }
         catch (Exception e) {
             e.printStackTrace();
-            return []
+            return null
         }
     }
 }
