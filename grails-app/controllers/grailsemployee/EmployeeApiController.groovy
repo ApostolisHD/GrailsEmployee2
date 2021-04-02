@@ -11,8 +11,8 @@ class EmployeeApiController {
     static responseFormats = ['json']
 
     def getAllEmployees() {
-        def employees = employeeService.getAllEmployees()
-        respond(employees, status: 200)
+        def employee = employeeService.getAllEmployees()
+        respond("employee": employee, status: 200)
     }
 
     def createEmployee() {
@@ -60,10 +60,14 @@ class EmployeeApiController {
     def deleteEmployee(Integer id) {
         try {
             def employee = employeeService.deleteEmployee(id)
-            respond("employee": employee, status: 202)
+            if(employee){
+            respond(status: 202)
+            }else {
+                respond("error": null, status: 400)
+            }
         } catch (Exception exception) {
             exception.printStackTrace()
-            respond("error": null, status: 400)
+            respond("error": null, status: 500)
         }
     }
 }

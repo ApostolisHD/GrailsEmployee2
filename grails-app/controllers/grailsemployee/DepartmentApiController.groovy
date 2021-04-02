@@ -6,8 +6,8 @@ class DepartmentApiController {
     static responseFormats = ['json']
 
     def getAllDepartments() {
-        def departments = departmentService.getAllDepartments()
-        respond(departments, status: 200)
+        def department = departmentService.getAllDepartments()
+        respond("department": department, status: 200)
     }
 
     def createDepartment() {
@@ -57,11 +57,15 @@ class DepartmentApiController {
     def deleteDepartment(Integer id) {
         try {
             def department = departmentService.deleteDepartment(id)
-            respond("department": department, status: 202)
+            if(department) {
+                respond(status: 202)
+            }else{
+                respond("error": null, status: 400)
+            }
         }
         catch (Exception exception) {
             exception.printStackTrace()
-            respond("error": null, status: 400)
+            respond("error": null, status: 500)
         }
     }
 }
