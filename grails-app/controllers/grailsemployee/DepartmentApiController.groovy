@@ -15,7 +15,8 @@ class DepartmentApiController {
             def department = departmentService.createDepartment(request.JSON.name)
             respond("department": department, status: 201)
         }
-        catch (Exception) {
+        catch (Exception exception) {
+            exception.printStackTrace()
             respond("error": null, status: 400)
         }
     }
@@ -28,7 +29,8 @@ class DepartmentApiController {
             } else {
                 respond("error": null, status: 404)
             }
-        } catch (Exception) {
+        } catch (Exception exception) {
+            exception.printStackTrace()
             respond("error": null, status: 500)
         }
     }
@@ -38,7 +40,8 @@ class DepartmentApiController {
             def department = departmentService.updateDepartment(id, request.JSON.name)
             respond("department": department, status: 200)
         }
-        catch (Exception) {
+        catch (Exception exception) {
+            exception.printStackTrace()
             respond("error": null, status: 400)
         }
     }
@@ -48,7 +51,8 @@ class DepartmentApiController {
             def department = departmentService.deleteDepartment(id)
             respond("department": department, status: 202)
         }
-        catch (Exception) {
+        catch (Exception exception) {
+            exception.printStackTrace()
             respond("error": null, status: 400)
         }
     }

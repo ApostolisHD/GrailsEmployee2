@@ -19,7 +19,8 @@ class EmployeeApiController {
         try {
             def employee = employeeService.createEmployee(request.JSON.first_name, request.JSON.last_name, request.JSON.afm, request.JSON.date_of_birth, request.JSON.id_dep)
             respond("employee": employee, status: 201)
-        } catch (Exception) {
+        } catch (Exception exception) {
+            exception.printStackTrace()
             respond("error": null, status: 400)
         }
     }
@@ -32,7 +33,8 @@ class EmployeeApiController {
             } else {
                 respond("error": null, status: 404)
             }
-        } catch (Exception e) {
+        } catch(Exception exception) {
+            exception.printStackTrace()
             respond("error": null, status: 500)
         }
     }
@@ -41,7 +43,8 @@ class EmployeeApiController {
         try {
             def employee = employeeService.updateEmployee(id, request.JSON.first_name, request.JSON.last_name, request.JSON.afm, request.JSON.date_of_birth, request.JSON.id_dep)
             respond("employee": employee, status: 200)
-        } catch (Exception) {
+        } catch (Exception exception) {
+            exception.printStackTrace()
             respond("error": null, status: 400)
         }
     }
@@ -50,7 +53,8 @@ class EmployeeApiController {
         try {
             def employee = employeeService.deleteEmployee(id)
             respond("employee": employee, status: 202)
-        } catch (Exception) {
+        } catch (Exception exception) {
+            exception.printStackTrace()
             respond("error": null, status: 400)
         }
     }

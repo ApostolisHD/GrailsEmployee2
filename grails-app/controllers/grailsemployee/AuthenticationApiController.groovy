@@ -33,6 +33,7 @@ class AuthenticationApiController {
             DecodedJWT jwt = JWT.decode(token)
             respond(status: 200, userName:jwt.claims.userName.toString())
         } catch (JWTDecodeException exception){
+            exception.printStackTrace()
             respond(status: 401)
         }
     }
